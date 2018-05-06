@@ -1,0 +1,126 @@
+@import './App.scss';
+
+$image1: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.appspot.com/o/sub-navigation-photos%2FMMedi-com.jpg?alt=media&token=ef7207dc-3375-4aa4-8581-5fc2994f80b7';
+$image2: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.appspot.com/o/sub-navigation-photos%2FMMshow1-com.jpg?alt=media&token=10f48e21-43cc-40b2-a58e-89a2ab724dca';
+$image3: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.appspot.com/o/sub-navigation-photos%2FMMshow5-com.jpg?alt=media&token=aaf4dfbe-2de6-4324-aefd-0e848ee986b9';
+$image4: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.appspot.com/o/sub-navigation-photos%2FMMshow7-com.jpg?alt=media&token=6dc80f78-8713-43e6-a6b1-f2d86459694a';
+
+.Content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+
+
+    > ._secondary-nav {
+        border-top: solid black;
+        border-width: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        top: 0;
+
+
+        > ._content-header-container {
+            flex: 1;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+
+            > ._content-header {
+                padding-bottom: 75%;
+                width: 100%;
+                position: relative;
+
+                > ._content-header-overlay {
+                position: absolute;
+                opacity: 0.5;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+
+                    @media all and (max-width: 400px) {
+                        font-size: 18px;
+                    }
+
+                    @media all and (min-width: 401px) and (max-width: 1000px) {
+                        font-size: 22px;
+                    }
+
+                    @media all and (min-width: 1001px) {
+                        font-size: 24px;
+                    }
+
+                    > ._content-title {
+                        cursor: default;
+                    }
+
+                    > ._content-title:hover {
+                        color: red;
+                    }
+                }
+
+                > ._about-overlay {
+                    background: $theme-orange;
+                }
+
+                > ._photos-overlay {
+                    background: $theme-blue;
+                }
+
+                > ._videos-overlay {
+                    background: $theme-yellow;
+                }
+
+                > ._services-overlay {
+                    background: $theme-teal;
+                }
+
+            }
+
+            > ._about {
+                background: url($image1);
+                background-size: cover;
+                }
+
+            > ._photos {
+                background: url($image2);
+                background-size: cover;
+            }
+
+            > ._videos {
+                background: url($image3);
+                background-size: cover;
+            }
+
+            > ._services {
+                background: url($image4);
+                background-size: cover;
+            }
+
+
+
+        }
+
+
+        @media all and (max-width: 1000px) {
+            > ._content-header-container {
+            min-width: 50%;
+            }
+        }
+
+    }
+
+    > ._content-box {
+
+    }
+}

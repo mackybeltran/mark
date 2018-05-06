@@ -1,0 +1,138 @@
+@import './App.scss';
+
+$header-image: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.appspot.com/o/cover%2Fmark-cover.jpeg?alt=media&token=f866a425-1149-4a1b-98ee-31b342252e37';
+$brick-background: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.appspot.com/o/cover%2Fgrey-bricks-wall-hd-wallpaper.jpg?alt=media&token=f0b922f5-d9b6-4a8f-9a4f-f8531ee17cf8';
+.Header {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+
+        > ._image-container {
+            background: url($header-image);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding-bottom: 43%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            background-position: center top;
+            background-color: black;
+
+
+
+            > ._noPlay-icon {
+                display: none;
+            }
+
+            > svg {
+                fill: white;
+                background: none;
+                opacity: 0.5;
+                width: auto;
+                position: absolute;
+
+            }
+
+            > svg:hover {
+                fill: $theme-blue;
+            }
+
+
+            @media all and (max-width: 480px) {
+                > svg {
+                    bottom: 15%;
+                    width: 15%;
+                    height: auto;
+
+                }
+
+            @media all and (max-width: 370px) {
+                > svg {
+                    bottom: 6vh;
+                    width: 5%;
+                    height: auto;
+                }
+            }
+        }
+
+            @media all and (min-width: 481px) and (max-width: 999px) {
+            > svg {
+
+                bottom: 15%;
+                width: 15%;
+                height: auto;
+
+            }
+        }
+
+            @media all and (min-width: 1000px) {
+            > svg {
+                bottom: 25%;
+                width: 15%;
+                height: auto;
+
+            }
+        }
+    }
+
+
+
+
+        > ._video-container {
+            background-attachment: fixed;
+            background-repeat: repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            flex-direction: column;
+
+            > ._close-button {
+                height: 20px;
+                top: 24px;
+                right: 20px;
+                background-color: black;
+                margin-bottom: 5px;
+                fill: #fafafa;
+            }
+
+            > ._close-button:hover {
+                fill: red;
+            }
+
+            > video {
+
+                width: auto;
+                height: 90%;
+            }
+        }
+
+        @media all and (max-width: 480px) {
+            > ._video-container {
+                height: 230px;
+                background-size: 500px;
+        }
+    }
+
+        @media all and (min-width: 481px) and (max-width: 1000px) {
+            > ._video-container {
+                height: 450px;
+                background-size: 980px;
+        }
+    }
+
+        @media all and (min-width: 1001px) {
+            > ._video-container {
+                height: 600px;
+                background-size: 1300px;
+        }
+    }
+
+}

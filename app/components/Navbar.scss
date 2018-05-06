@@ -1,0 +1,165 @@
+@import './App.scss';
+
+.Navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+
+    > ._navbar {
+        top: 0;
+        width: 160px;
+        border-radius: 5px;
+        padding: 15px;
+        z-index: 99;
+        background-color: black;
+        opacity: 0.75;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        > ._menu-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+
+            @media all and (min-aspect-ratio: 576/274 ){
+                fill: $theme-blue;
+            }
+
+        }
+
+        > ._menu-icon:hover {
+            fill: $theme-orange;
+        }
+
+        > ._title {
+            padding-bottom: 10px;
+        }
+
+        @media all and (max-width: 480px) {
+           > ._title {
+            font-size: 20px;
+            }
+        }
+
+        @media all and (min-width: 481px) and (max-width: 1000px) {
+            > ._title {
+            font-size: 23px;
+            }
+        }
+
+        @media all and (min-width: 1001px) {
+
+            > ._title {
+                font-size: 25px;
+            }
+        }
+
+        > ._icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            > svg {
+            background-color: white;
+            margin-left: 5px;
+            margin-right: 5px;
+            }
+
+            > svg:hover {
+            background-color: $theme-orange;
+            }
+
+            @media all and (min-width: 1001px) {
+                > svg {
+                height: 20px;
+                width: 20px;
+                }
+            }
+
+            @media all and (min-width: 481px) and (max-width: 1000px) {
+                > svg {
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+
+            @media all and (max-width: 480px) {
+                > svg {
+                    height: 16px;
+                    width: 16px;
+                }
+            }
+        }
+    }
+
+    > ._navbar-none {
+        display: none;
+    }
+
+    > ._navbar-fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        z-index: 99;
+        background-color: black;
+        color: white;
+
+    }
+
+    > ._popup-menu {
+        margin-top: 5px;
+        width: 160px;
+        padding: 10px;
+        background-color: black;
+        border-radius: 5px;
+        opacity: 0.75;
+        z-index: 99;
+
+
+        > ._menu-item {
+            color: white;
+
+            @media all and (min-width: 600px) {
+                padding: 5px;
+            }
+        }
+
+        > ._menu-item:hover {
+            color: $theme-orange;
+            cursor: default;
+        }
+
+        @media all and (min-width: 600px) {
+        position: fixed;
+        top: 60px;
+        left: 20px;
+        }
+
+        @media all and (max-width: 600px) {
+            font-size: 10px;
+        }
+    }
+
+    > ._popup-menu-none {
+        display: none;
+    }
+
+}
+
+
+
+
