@@ -9,29 +9,34 @@ class Header extends PureComponent {
         super(props);
 
         this._handleHeaderScroll = this._handleHeaderScroll.bind(this);
+        this._handleResize = this._handleResize.bind(this);
         this._handleImageChange = this._handleImageChange.bind(this);
         this._handleVideoChange = this._handleVideoChange.bind(this);
         this._handlePopupVisibility = this._handlePopupVisibility.bind(this);
-        this._handleLosePopupFocus = this._handleLosePopupFocus.bind(this)
+        this._handleLosePopupFocus = this._handleLosePopupFocus.bind(this);
+        this._handleFixedPopupVisibility = this._handleFixedPopupVisibility.bind(this);
 
         this.state = {
             pageScrolled: false,
             noPlayIcon: false,
             image: true,
-            popupMenuOn: false
+            popupMenuOn: false,
+            fixedPopupMenuOn: false,
         }
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this._handleHeaderScroll);
+        window.addEventListener('resize', this._handleResize);
     }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this._handleHeaderScroll);
+        window.removeEventListener('resize', this._handleResize);
     }
 
     _handleHeaderScroll() {
-        window.scrollY <= 60 ? this.setState({pageScrolled: false, noPlayIcon: false}) : this.setState({pageScrolled: true, noPlayIcon: true, popupMenuOn: false});
+        window.scrollY <= 60 ? this.setState({pageScrolled: false, noPlayIcon: false, fixedPopupMenuOn: false}) : this.setState({pageScrolled: true, noPlayIcon: true, popupMenuOn: false});
     }
 
     _handleImageChange() {
@@ -47,7 +52,17 @@ class Header extends PureComponent {
     }
 
     _handleLosePopupFocus() {
-        this.setState({popupMenuOn: false})
+        this.setState({popupMenuOn: false, fixedpopupMenuOn: false})
+    }
+
+    _handleFixedPopupVisibility() {
+        this.state.fixedPopupMenuOn ? this.setState({fixedPopupMenuOn: false}) : this.setState({fixedPopupMenuOn: true})
+    }
+
+    _handleResize(){
+        if (window.outerWidth > 900) {this.setState({fixedPopupMenuOn: false})}
+
+
     }
 
     render() {
@@ -61,9 +76,11 @@ class Header extends PureComponent {
                 <Navbar pageScrolled={this.state.pageScrolled}
                         image={this.state.image}
                         _handlePopupVisibility={this._handlePopupVisibility}
+                        _handleFixedPopupVisibility={this._handleFixedPopupVisibility}
                         popupMenuOn={this.state.popupMenuOn}
                         _handleCurrentContentChange={this.props._handleCurrentContentChange}
-                        currentContent={this.props.currentContent}/>
+                        currentContent={this.props.currentContent}
+                        fixedPopupMenuOn={this.state.fixedPopupMenuOn}/>
 
                     { this.state.image  ?
                     <div className='_image-container' onClick={this._handleLosePopupFocus}>
