@@ -126,12 +126,29 @@
 
         > ._navbar-fixed-title {
             margin-right: 40px;
+
+            @media all and (max-width: 480px) {
+                font-size: 20px;
+            }
+
+            @media all and (min-width: 481px) and (max-width: 1000px) {
+                font-size: 23px;
+
+            }
+
+        @media all and (min-width: 1001px) {
+                font-size: 25px;
+            }
+        }
+
+        > ._navbar-fixed-menu-selections-none {
+            display: none;
         }
 
         > ._navbar-fixed-menu-selections {
             display: flex;
             justify-content: flex-end;
-            flex-direction: row;
+
             right: 20px;
             position: fixed;
 
@@ -142,10 +159,14 @@
                     display: none;
                 }
             }
+
+            > ._navbar-fixed-menu-items:hover {
+                color: $theme-orange;
+            }
         }
 
         > ._navbar-fixed-menu-icon {
-            fill: $theme-orange;
+            fill: $theme-blue;
             position: fixed;
             left: 20px;
             top: 30px;
@@ -156,6 +177,10 @@
             }
 
 
+
+        }
+        > ._navbar-fixed-menu-icon:hover {
+            fill: $theme-orange;
         }
     }
 
@@ -194,6 +219,44 @@
     }
 
     > ._popup-menu-none {
+        display: none;
+    }
+
+    > ._fixed-popup-menu {
+        margin-top: 35px;
+        width: 160px;
+        padding: 10px;
+        background-color: black;
+        border-radius: 5px;
+        opacity: 0.75;
+        z-index: 99;
+
+
+        > ._fixed-menu-item {
+            color: white;
+
+            @media all and (min-width: 600px) {
+                padding: 5px;
+            }
+        }
+
+        > ._fixed-menu-item:hover {
+            color: $theme-orange;
+            cursor: default;
+        }
+
+        @media all and (min-width: 600px) {
+        position: fixed;
+        top: 60px;
+        left: 20px;
+        }
+
+        @media all and (max-width: 600px) {
+            font-size: 10px;
+        }
+    }
+
+    > ._fixed-popup-menu-none {
         display: none;
     }
 

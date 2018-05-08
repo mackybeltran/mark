@@ -13,6 +13,7 @@ class App extends PureComponent {
         this._handlePhotoBack = this._handlePhotoBack.bind(this);
         this._handleVideoForward = this._handleVideoForward.bind(this);
         this._handleVideoBack = this._handleVideoBack.bind(this);
+
         this.state = {
             currentContent: 'about',
             copy: {},
