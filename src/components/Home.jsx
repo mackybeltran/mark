@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 import firebase from 'firebase';
-import './App.scss';
+import './Home.scss';
 import Header from './Header.jsx';
 import Content from './Content.jsx'
 import Footer from './Footer.jsx'
+import { Route, BrowserRouter} from 'react-router-dom';
 
-class App extends PureComponent {
+class Home extends PureComponent {
     constructor(props) {
         super(props);
         this._handleCurrentContentChange = this._handleCurrentContentChange.bind(this);
@@ -26,7 +27,7 @@ class App extends PureComponent {
         }
     }
 
-    getData = () => {
+    getData() {
         const rootRef = firebase.database().ref('data');
         return rootRef.once('value')
             .then((response) => response.val())
@@ -79,7 +80,7 @@ class App extends PureComponent {
     }
 
     render() {
-        return <div className='app'>
+        return <div className='Home'>
             <div className='_layout'>
                 <Header _handleCurrentContentChange={this._handleCurrentContentChange}/>
                 <Content currentContent={this.state.currentContent}
@@ -100,4 +101,4 @@ class App extends PureComponent {
     }
 }
 
-export default App;
+export default Home;

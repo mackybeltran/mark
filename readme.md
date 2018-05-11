@@ -1,14 +1,19 @@
-Promotional website for Magician Magic Mark
+# Deployable React + Webpack 2 starter kit
 
-Stack: React/firebase
+- React 15
+- Webpack 2
+- React-hot-loader 3
+- SASS
 
-npm i to install dependencies
+Running on development mode:
+```
+npm run dev
+```
 
-npm run watch to start server
+Running on production mode:
+```
+npm run build
+npm start
+```
 
-.
-.
-.
-.
-.
-.
+Before you deploy, make sure you generated your bundle through `npm run build`.

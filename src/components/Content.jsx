@@ -26,16 +26,16 @@ class Content extends PureComponent {
                 <div className='_content-header-container'>
                     <div className='_content-header _videos'>
                         <div className='_content-header-overlay _videos-overlay'>
-                            <div className='_content-title' onClick={() => this.props._handleCurrentContentChange('videos')}>VIDEOS
-                            </div>
+                            <a href='#VariableBox'className='_content-title' onClick={() => this.props._handleCurrentContentChange('videos')}>VIDEOS
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div className='_content-header-container'>
                     <div className='_content-header _services'>
                         <div className='_content-header-overlay _services-overlay'>
-                            <div className='_content-title' onClick={() => this.props._handleCurrentContentChange('services')}>SERVICES
-                            </div>
+                            <a href='#VariableBox' className='_content-title' onClick={() => this.props._handleCurrentContentChange('services')}>SERVICES
+                            </a>
                         </div>
                     </div>
                 </div>

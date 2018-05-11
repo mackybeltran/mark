@@ -85,7 +85,7 @@ class Header extends PureComponent {
                     { this.state.image  ?
                     <div className='_image-container' onClick={this._handleLosePopupFocus}>
                         {playButton}
-                    }
+
                     </div> :
                     <div className='_video-container'>
                         {closeButton}

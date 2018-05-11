@@ -44,7 +44,7 @@ $brick-background: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.
             }
 
 
-            @media all and (max-width: 480px) {
+            @media only screen and (max-width: 480px) {
                 > svg {
                     bottom: 15%;
                     width: 15%;
@@ -52,16 +52,16 @@ $brick-background: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.
 
                 }
 
-            @media all and (max-width: 370px) {
+            @media only screen and (max-width: 370px) {
                 > svg {
-                    bottom: 6vh;
+                    bottom: 4vh;
                     width: 5%;
                     height: auto;
                 }
             }
         }
 
-            @media all and (min-width: 481px) and (max-width: 999px) {
+            @media only screen and (min-width: 481px) and (max-width: 999px) {
             > svg {
 
                 bottom: 15%;
@@ -71,7 +71,7 @@ $brick-background: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.
             }
         }
 
-            @media all and (min-width: 1000px) {
+            @media only screen and (min-width: 1000px) {
             > svg {
                 bottom: 25%;
                 width: 15%;
@@ -101,6 +101,7 @@ $brick-background: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.
                 background-color: black;
                 margin-bottom: 5px;
                 fill: #fafafa;
+                padding-top: 5px;
             }
 
             > ._close-button:hover {
@@ -114,21 +115,21 @@ $brick-background: 'https://firebasestorage.googleapis.com/v0/b/magicmark-223cc.
             }
         }
 
-        @media all and (max-width: 480px) {
+        @media only screen and (max-width: 480px) {
             > ._video-container {
                 height: 230px;
                 background-size: 500px;
         }
     }
 
-        @media all and (min-width: 481px) and (max-width: 1000px) {
+        @media only screen and (min-width: 481px) and (max-width: 1000px) {
             > ._video-container {
                 height: 450px;
                 background-size: 980px;
         }
     }
 
-        @media all and (min-width: 1001px) {
+        @media only screen and (min-width: 1001px) {
             > ._video-container {
                 height: 600px;
                 background-size: 1300px;
