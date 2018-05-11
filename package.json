@@ -2,6 +2,7 @@
   "name": "MM",
   "version": "1.0.0",
   "description": "Magic Mark.",
+  "homepage": "www.magicmarkshow.com",
   "main": "./src/entry.js",
   "license": "MIT",
   "scripts": {
